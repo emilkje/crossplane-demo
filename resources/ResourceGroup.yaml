@@ -1,0 +1,11 @@
+apiVersion: azure.crossplane.io/v1alpha3
+kind: ResourceGroup
+metadata:
+  name: crossplane-rg
+  labels:
+    app.kubernetes.io/name: crossplane-rg
+    app.kubernetes.io/component: resource-group
+    app.kubernetes.io/part-of: crossplane-demo
+spec:
+  location: Norway East
+  

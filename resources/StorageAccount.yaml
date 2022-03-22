@@ -1,0 +1,18 @@
+apiVersion: storage.azure.crossplane.io/v1alpha3
+kind: Account
+metadata:
+  name: crossplanedemo
+  labels:
+    app.kubernetes.io/name: crossplanedemo
+    app.kubernetes.io/component: storage-account
+    app.kubernetes.io/part-of: crossplane-demo
+spec:
+  resourceGroupName: crossplane-rg
+  storageAccountSpec:
+    kind: Storage
+    location: Norway East
+    sku:
+      name: Standard_ZRS
+  writeConnectionSecretToRef:
+    namespace: default
+    name: storage-account-secret
